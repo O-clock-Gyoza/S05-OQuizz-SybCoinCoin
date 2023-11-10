@@ -1,0 +1,38 @@
+en tant que visiteur
+
+- acceder au formulaire d'inscription > pour s'inscrire
+- acceder au formulaire d'identification (mais pas se logué)
+- avoir une page d'acceuil qui montre le contenu du site
+    > quizz avec titre, theme, auteur, tag
+- avoir page des quizz / thematique
+- avoir page des quizz / tag
+- avoir page des quizz / auteur
+- pouvoir voir les qizz 
+    > voir les question et reponse proposer
+    > voir la difficulté
+    > voir les tag
+    > voir les context / question
+    > redirigé vers l'inscrition/login
+
+
+en tant que utilisteur (inscrit)
+
+- acceder au formulaire d'identification et se logué
+
+en tant que utilisteur (logué)
+
+- peut repondre au question du quizz
+- peut validé son quizz.
+- peut accèder au resultat de son quizz. 
+- peut voir bonne reponse.
+- peut avoir un score.
+
+
+en temps qu'admin (logé)
+
+- CRUD quizz
+- CRUD question (+infos), 
+- CRUD reponse
+- CRUD thematique
+- CRUD tag
+- CRUD level
