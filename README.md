@@ -3,7 +3,9 @@
 
 cf plus bas: "Du code classe !"
 
-
+En revanche votre repo avec rien, bien c'est normal apparement, ca s fait a la dure.
+les tables sont dons data, les explication en dessous, un packgage.json et les base app et asset pour les starters.
+concentrez vous sur les class \èOé/
 
 
 
