@@ -27,7 +27,7 @@ let personB = {
 //---------------
 
 // la factory
-
+// le but : produire des objet
 function createPerson(firstNameValue, lastnameValue, ageValue)
 {
     let objectARenvoyer = {
@@ -41,8 +41,8 @@ function createPerson(firstNameValue, lastnameValue, ageValue)
 }
 
 let personC = createPerson("willy","Wonka",45);
-//console.log(personC.firstname, personC.lastname, personC.age);
 
+// rappele, on peut mettre des methode aussi dans les objects
 let personD = {
     firstname:"Sylvain",
     lastname:"Briand",
@@ -59,7 +59,6 @@ let personD = {
 
 }
 
-//personD.say();
 
 // --------------------------------------------- OBJET CLASSE
 
@@ -161,11 +160,17 @@ class OldVoiture
 
 
 //---------------------------------------------------
+// apres factorisation
 
+// cette classe regroupe les points communs entre cheval et voiture
 class Vehicule
 {
 
+    //static
+    // static proprieté de classe , pas d'objet, 
+    // s'apelle via Vehicule.VehiculesNum
     static VehiculesNum = 0;
+
 
     #sound;
 
@@ -180,7 +185,7 @@ class Vehicule
 
 }
 
-
+// juste pour la voiture
 class Voiture extends Vehicule
 {
     #type = "voiture";
@@ -194,10 +199,10 @@ class Voiture extends Vehicule
 
 }
 
-
+// juste pour le cheval
 class Cheval extends Vehicule
 { 
-    static cavalierMonteNum = 0;
+    static cavalierMonteNum = 0; // static proprieté de classe Cheval
 
     #type = "steak";
     #cavalier;
@@ -219,7 +224,6 @@ class Cheval extends Vehicule
     // setter permet, par exemple de faire des operation silencieuse
     // on peut par exemple en profiter pour verifié des donnée
 
-
     set cavalier(cavalierValue) { 
 
         Cheval.cavalierMonteNum++;
@@ -234,19 +238,19 @@ class Cheval extends Vehicule
 let voiture = new Voiture("pouet");
 let voiture2 = new Voiture("tchoutchou");
 
+
 let cheval = new Cheval();
 console.log("cheval avant:",cheval.cavalier, Cheval.cavalierMonteNum);
+// on set un cavalier su ce cheval
 cheval.cavalier="zorro";
 console.log("cheval apres:",cheval.cavalier, Cheval.cavalierMonteNum);
 
-
 new Cheval();
 new Cheval();
 new Cheval();
 new Cheval();
 new Cheval();
 new Cheval();
-
 
 voiture.start();
 voiture2.start();
