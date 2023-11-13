@@ -1,5 +1,7 @@
 //Programmation Orienté Objet
 
+// --------------------------------------------- OBJET VANILLA
+
 let object = {
     variable:10, // propriété
     methode: ()=>{ console.log("plop");}, // methode
@@ -39,9 +41,7 @@ function createPerson(firstNameValue, lastnameValue, ageValue)
 }
 
 let personC = createPerson("willy","Wonka",45);
-
-
-console.log(personC.firstname, personC.lastname, personC.age);
+//console.log(personC.firstname, personC.lastname, personC.age);
 
 let personD = {
     firstname:"Sylvain",
@@ -59,7 +59,9 @@ let personD = {
 
 }
 
-personD.say();
+//personD.say();
+
+// --------------------------------------------- OBJET CLASSE
 
 //-------------- la meme chose avec classe
 
@@ -71,6 +73,8 @@ class Person
     #lastname;  // parametre privé > n'est pas accessible depuis l'instance(objet créé) seulement dans la class
     #age; // parametre privé > n'est pas accessible depuis l'instance(objet créé)
 
+
+    //le constructeur, construit l'instance(objet)
     constructor(firstnameValue, lastnameValue, ageValue)
     {
         this.firstname = firstnameValue;
@@ -78,7 +82,7 @@ class Person
         this.#age = ageValue;
     }
 
-    // methode publique avec parametre
+    // méthode publique avec parametre
     coincoin(param) {
 
         this.#arrow(); // les methode de la classe peuvent utiliser les methode privé
@@ -97,6 +101,7 @@ class Person
 
 }
 
+/*
 let personClass = new Person("sarah","abidbol",25);
 
 personClass.coincoin("POUET");
@@ -124,4 +129,133 @@ for(let data of bigDatas)
 
 */
 
+/*
+EXERCICE
 
+une classe : Voiture
+
+> parametre privé sound > string 
+
+> methode start console.log(sound);
+
+*/
+//avant factorisation
+
+
+class OldVoiture
+{
+
+    #sound;
+    #type = "voiture";
+
+    constructor(soundValue)
+    {
+        this.#sound = soundValue;
+    }
+
+    start() { console.log(this.#sound);}
+
+    get type() {return this.#type; }
+
+}
+
+
+//---------------------------------------------------
+
+class Vehicule
+{
+
+    static VehiculesNum = 0;
+
+    #sound;
+
+    constructor(soundValue)
+    {
+        this.#sound = soundValue;
+
+        Vehicule.VehiculesNum++; 
+    }
+
+    start() { console.log(this.#sound);}
+
+}
+
+
+class Voiture extends Vehicule
+{
+    #type = "voiture";
+
+    constructor(soundValue)
+    {
+        super(soundValue);
+    }
+
+    get type() {return this.#type; }
+
+}
+
+
+class Cheval extends Vehicule
+{ 
+    static cavalierMonteNum = 0;
+
+    #type = "steak";
+    #cavalier;
+
+    constructor()
+    {
+        super("hIIIhuuhHUHUhhHUuu");
+    }
+
+    get type() {return this.#type; }
+
+
+    // retourne la valeur, peut egalement faire des operation silencieuses
+    get cavalier() { 
+
+        return this.#cavalier; 
+    }
+
+    // setter permet, par exemple de faire des operation silencieuse
+    // on peut par exemple en profiter pour verifié des donnée
+
+
+    set cavalier(cavalierValue) { 
+
+        Cheval.cavalierMonteNum++;
+        this.#cavalier = cavalierValue;
+    }
+
+
+}
+
+//-------------------------------
+
+let voiture = new Voiture("pouet");
+let voiture2 = new Voiture("tchoutchou");
+
+let cheval = new Cheval();
+console.log("cheval avant:",cheval.cavalier, Cheval.cavalierMonteNum);
+cheval.cavalier="zorro";
+console.log("cheval apres:",cheval.cavalier, Cheval.cavalierMonteNum);
+
+
+new Cheval();
+new Cheval();
+new Cheval();
+new Cheval();
+new Cheval();
+new Cheval();
+
+
+voiture.start();
+voiture2.start();
+cheval.start();
+
+console.log(voiture.type, voiture2.type, cheval.type);
+console.log("---------");
+console.log("numVehicule :",Vehicule.VehiculesNum);
+
+
+
+//----------
