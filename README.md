@@ -1,6 +1,12 @@
 
-# Challenge jour 1
-Faire le MLD du MCD
+# Challenge jour 2
+
+cf plus bas: "Du code classe !"
+
+
+
+
+
 
 
 # OQuiz
