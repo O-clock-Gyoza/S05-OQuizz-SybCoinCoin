@@ -230,7 +230,6 @@ class Cheval extends Vehicule
         this.#cavalier = cavalierValue;
     }
 
-
 }
 
 //-------------------------------

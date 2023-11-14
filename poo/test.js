@@ -1,3 +1,4 @@
+
 class OldVoiture
 {
 
@@ -39,7 +40,6 @@ class OldCheval
 
 class Vehicule
 {
-
     #sound;
     #type;
 
@@ -68,7 +68,7 @@ class Voiture extends Vehicule
 
 
 
-class Cheval
+class Cheval extends Vehicule 
 {
     #type = "steak";
 
@@ -88,3 +88,5 @@ voiture.start();
 cheval.start();
 
 console.log(voiture.type, cheval.type);
+
+
