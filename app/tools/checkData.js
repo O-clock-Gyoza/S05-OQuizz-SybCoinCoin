@@ -14,7 +14,7 @@ class CheckData
 
     static Int(value)
 	{
-		if(!isNaN(parseInt(value, 10))) {
+		if(isNaN(parseInt(value, 10))) {
 			throw Error(" must be an integer!");
 		}
 		return value;

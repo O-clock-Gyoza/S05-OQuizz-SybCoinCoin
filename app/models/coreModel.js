@@ -20,7 +20,7 @@ class CoreModel
 
     //------
 
-    set id(value) { this.#id = CheckData.Int(value); }
+    set id(value) { this.#id = value; /*this.#id = CheckData.Int(value);*/ }
 
     // propriété lisible via le get (assesseur).
     get id() {return this.#id; }

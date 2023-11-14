@@ -50,7 +50,7 @@ class Level extends CoreModel
             }
             else
             {
-                // une moins un contenu
+                // au moins un contenu
                 // on organise un tableau de reponse
 
                 let levels = [];
@@ -121,20 +121,16 @@ class Level extends CoreModel
             // gestion du resultat
 
             if (!result.rowCount) {
-                // pas de reour = probleme quelque part,
+                // pas de retour = probleme quelque part,
                 // il faut appeler les internets au secours.
                 return callback('Insert did not return any id.', this);
             }
 
-            // le resultat et ok
-
-            console.log("return :",  result.rows[0].id);
+            // le resultat est ok
             
-            // BUG to do a debuguer 
+            this.id = result.rows[0].id;
 
-            //this.id = result.rows[0].id;
-
-            //return callback(null, this);
+            return callback(null, this);
 
         });
 
@@ -152,16 +148,19 @@ class Level extends CoreModel
         }
 
         client.query(query, (err, result) => {
-        if (err) {
-            return callback(err, null);
-        }
 
-        if (!result.rowCount) {
-            return callback('Update did not target any rows', this);
-        }
+            if (err) {
+                return callback(err, null);
+            }
 
-        // au moins une ligne a été modifié => tout va bien !
-        return callback(null, this);
+            // l'id n'a pointer null part
+            if (!result.rowCount) {
+                return callback('Update did not target any rows', this);
+            }
+
+            // au moins une ligne a été modifié => tout va bien !
+            return callback(null, this);
+
         });
     }
 
@@ -173,16 +172,16 @@ class Level extends CoreModel
 
         client.query(query, (err, result) => {
 
-        if (err) {
-            return callback(err, null);
-        }
+            if (err) {
+                return callback(err, null);
+            }
 
-        if (!result.rowCount) {
-            return callback('Delete did not target any rows', this);
-        }
+            if (!result.rowCount) {
+                return callback('Delete did not target any rows', this);
+            }
 
-        // au moins une ligne a été supprimé => tout va bien !
-        return callback(null, true);
+            // au moins une ligne a été supprimé => tout va bien !
+            return callback(null, true);
         });
     };
     //supprimer une donnée dans la base (delete)

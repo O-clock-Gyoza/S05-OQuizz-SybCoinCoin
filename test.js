@@ -44,17 +44,20 @@ const Level = require("./app/models/level");
 
 function callback (err,result)
 {
-    console.log("nresult:", result.length);
+    //console.log("nresult:", result.length);
     console.log(result);
+    console.log("------------- end of request");
 }
 
 Level.GetAll(callback);
 
 //-----
 
+
+
 let newLevelEntry = new Level();
 newLevelEntry.name = "plus ultra";
-newLevelEntry.insert();
+newLevelEntry.insert(callback);
 
 
 // je regarde le resultat
