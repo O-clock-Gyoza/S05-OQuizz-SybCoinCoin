@@ -3,6 +3,8 @@ const Level = require('./models/level');
 
 class DataMapper  {
 
+    // le data mapper distribue des objets representant les entités de maniere autonome
+
     // fonction pour recevoir des data de la bdd
 
     static GetAllLevels(callback)
@@ -42,7 +44,7 @@ class DataMapper  {
 
     }
 
-    static getOneLevel(id, callback)
+    static GetOneLevel(id, callback)
     {
         // notre requete dynamique
         const query = {
@@ -72,7 +74,69 @@ class DataMapper  {
         });
 
     }
+    
+    //static ImportLevel(callback)
 
+    //static UpdateLevel(callback)
+    
+    //static DeleteLevel(callback)
+
+
+    //static GetAllUsers(callback)
+    
+    //static GetOneUsers(callback)
+    
+    //static ImportUser(callback)
+
+    //static UpdateUser(callback)
+    
+    //static DeleteUser(callback)
+
+
+    //static GetAllUsers(callback)
+    
+    //static GetOneUsers(callback)
+    
+    //static ImportUser(callback)
+
+    //static UpdateUser(callback)
+    
+    //static DeleteUser(callback)
+
+
+    //static GetAllUsers(callback)
+    
+    //static GetOneUsers(callback)
+    
+    //static ImportUser(callback)
+
+    //static UpdateUser(callback)
+    
+    //static DeleteUser(callback)
+
+
+    //static GetAllUsers(callback)
+    
+    //static GetOneUsers(callback)
+    
+    //static ImportUser(callback)
+
+    //static UpdateUser(callback)
+    
+    //static DeleteUser(callback)
+
+
+    //static GetAllUsers(callback)
+    
+    //static GetOneUsers(callback)
+    
+    //static ImportUser(callback)
+
+    //static UpdateUser(callback)
+    
+    //static DeleteUser(callback)
+
+    
 }
 
 module.exports = DataMapper;

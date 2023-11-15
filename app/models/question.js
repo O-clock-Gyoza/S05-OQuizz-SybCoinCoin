@@ -4,6 +4,8 @@ const CoreModel = require("./coreModel");
 class Question extends CoreModel
 {
 
+    static tablename = "question";
+
     question;
     wiki;
     anecdote;

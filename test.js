@@ -40,6 +40,7 @@ DataMapper.GetAllLevels(callback);
 
 //test de notre active record
 
+/*
 const Level = require("./app/models/level");
 
 function callback (err,result)
@@ -50,7 +51,7 @@ function callback (err,result)
 }
 
 Level.GetAll(callback);
-
+*/
 //-----
 
 

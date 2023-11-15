@@ -3,6 +3,8 @@ const CoreModel = require("./coreModel");
 class Quiz extends CoreModel
 {
 
+    static tablename = "quiz";
+
     title;
     description;
     userId;

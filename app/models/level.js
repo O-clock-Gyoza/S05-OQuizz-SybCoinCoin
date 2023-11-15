@@ -8,6 +8,8 @@ const client = require('../database');
 class Level extends CoreModel
 {
 
+    static tablename = "level";
+
     name;
 
     constructor(data)
