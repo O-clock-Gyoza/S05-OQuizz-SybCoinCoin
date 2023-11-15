@@ -1,4 +1,21 @@
 
+# Challenge jour 4
+
+1 installer sequelize
+npm install sequelize
+
+2 configurer sequelize
+(file databasesqlz.js)
+
+3 tester
+https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
+
+testz.js
+
+
+
+
+
 # Challenge jour 3
 
 Les méthodes Active Record du modèle Level ont été codées.

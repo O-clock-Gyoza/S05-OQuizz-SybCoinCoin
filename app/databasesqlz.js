@@ -10,10 +10,10 @@ const sequelize = new Sequelize(
         //option sequelize on ajoute les propriété commune
         define: 
         {
+            //id n'a pas besoin d'etre decalré, c'est automatique
             updatedAt: 'updated_at',
             createdAt: 'created_at'
         }
-
     }
 
 );
